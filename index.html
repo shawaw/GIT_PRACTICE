@@ -75,7 +75,7 @@
 
         <div class="equation">
             <input type="number" id="num1" value="0">
-            <span class="operator">+</span>
+            <span class="operator">&times;</span>
             <input type="number" id="num2" value="0">
             <span class="equals">=</span>
             <div class="result-value" id="sum">0</div>
@@ -90,7 +90,7 @@
         function updateSum() {
             const num1 = parseFloat(num1Input.value) || 0;
             const num2 = parseFloat(num2Input.value) || 0;
-            sumDisplay.textContent = num1 + num2;
+            sumDisplay.textContent = num1 * num2;
         }
 
         num1Input.addEventListener('input', updateSum);
