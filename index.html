@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Summation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #001f4d;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #e0e0e0;
+            margin-bottom: 40px;
+            font-size: 28px;
+        }
+
+        .equation {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        input {
+            width: 80px;
+            padding: 10px;
+            font-size: 18px;
+            border: 1px solid #555;
+            text-align: center;
+            background: #2a2a2a;
+            color: #e0e0e0;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #4a9eff;
+        }
+
+        .operator {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e0e0e0;
+        }
+
+        .equals {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e0e0e0;
+        }
+
+        .result-value {
+            font-size: 28px;
+            font-weight: bold;
+            color: #4a9eff;
+            min-width: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Version 1.0</h1>
+
+        <div class="equation">
+            <input type="number" id="num1" value="0">
+            <span class="operator">+</span>
+            <input type="number" id="num2" value="0">
+            <span class="equals">=</span>
+            <div class="result-value" id="sum">0</div>
+        </div>
+    </div>
+
+    <script>
+        const num1Input = document.getElementById('num1');
+        const num2Input = document.getElementById('num2');
+        const sumDisplay = document.getElementById('sum');
+
+        function updateSum() {
+            const num1 = parseFloat(num1Input.value) || 0;
+            const num2 = parseFloat(num2Input.value) || 0;
+            sumDisplay.textContent = num1 + num2;
+        }
+
+        num1Input.addEventListener('input', updateSum);
+        num2Input.addEventListener('input', updateSum);
+    </script>
+</body>
+</html>
